@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Maingame : MonoBehaviour
 {
+
+	
 	void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -15,6 +17,10 @@ public class Maingame : MonoBehaviour
 			{
 				Debug.Log(hit.collider.name);
 			}
+
+			Monster monster = hit.collider.GetComponent<Monster>();
+			monster.Life--;
+			monster.UpdateLife();
 		}
 	}
 }

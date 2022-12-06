@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 55632185}
   - component: {fileID: 55632184}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TextLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,6 +555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 10
+  TextLife: {fileID: 55632184}
+  ImageLife: {fileID: 1617588385}
 --- !u!61 &1579687484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -593,7 +595,7 @@ GameObject:
   - component: {fileID: 1617588386}
   - component: {fileID: 1617588385}
   m_Layer: 5
-  m_Name: Life
+  m_Name: LifeFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

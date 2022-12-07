@@ -1,11 +1,25 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Maingame : MonoBehaviour
 {
+	public List<MonsterInfos> Monsters;
+	int _currentMonster;
+	public Monster Monster;
 
-	
+    private void Start()
+    {
+		Monster.SetMonster(Monsters[_currentMonster]);
+    }
+
+	private void NextMonster()
+	{
+		_currentMonster++;
+		Monster.SetMonster(Monsters[_currentMonster]);
+	}
+
 	void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
@@ -19,8 +33,12 @@ public class Maingame : MonoBehaviour
 			}
 
 			Monster monster = hit.collider.GetComponent<Monster>();
-			monster.Life--;
-			monster.UpdateLife();
+			monster.Hit(1);
+			
+			if ( monster.IsAlive() == false)
+            {
+				NextMonster();
+            }
 		}
 	}
 }

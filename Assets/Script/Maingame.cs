@@ -8,6 +8,7 @@ public class Maingame : MonoBehaviour
 	public List<MonsterInfos> Monsters;
 	int _currentMonster;
 	public Monster Monster;
+	public GameObject PrefabHitPoint;
 
     private void Start()
     {
@@ -34,7 +35,12 @@ public class Maingame : MonoBehaviour
 
 			Monster monster = hit.collider.GetComponent<Monster>();
 			monster.Hit(1);
-			
+			GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
+			go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 100;
+			go.transform.DOLocalMoveY(150, 0.8f);
+			go.GetComponent<Text>().DOFade(0, 0.8f);
+			GameObject.Destroy(go, 0.8f);
+
 			if ( monster.IsAlive() == false)
             {
 				NextMonster();

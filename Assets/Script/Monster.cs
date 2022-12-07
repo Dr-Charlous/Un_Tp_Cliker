@@ -26,6 +26,7 @@ public class Monster : MonoBehaviour
     public Image ImageLife;
     public Sprite Sprite;
     public GameObject Visual;
+    public Canvas Canvas;
 
     public void SetMonster(MonsterInfos infos )
     {
@@ -52,6 +53,6 @@ public class Monster : MonoBehaviour
         _life -= damage;
         UpdateLife();
         Visual.transform.DOComplete();
-        Visual.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0), 0.3f);
+        Visual.transform.DOPunchScale(new Vector3(0.1f, 0, 0), 0.3f);
     }
 }

@@ -464,6 +464,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1034613232}
     m_Modifications:
+    - target: {fileID: 45658948611921034, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45658948611921034, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45658948611921034, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1919071906}
+    - target: {fileID: 45658948611921034, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2957881380481487241, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
@@ -781,7 +797,6 @@ GameObject:
   - component: {fileID: 1919071912}
   - component: {fileID: 1919071909}
   - component: {fileID: 1919071911}
-  - component: {fileID: 1919071910}
   m_Layer: 0
   m_Name: _Scripts
   m_TagString: Untagged
@@ -816,40 +831,6 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 1a9a92c8b3f6d0b45ab3f54403a41627, type: 3}
   Monster: {fileID: 1579687485}
   PrefabHitPoint: {fileID: 4633319694470132182, guid: 7d4d2fa797464ef4596c7c42f7b90fce, type: 3}
---- !u!114 &1919071910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919071906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 
 --- !u!222 &1919071911
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -875,8 +856,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 879.7068, y: -404.79843}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 916.6379, y: -404.79843}
+  m_SizeDelta: {x: 173.8621, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1995199843
 GameObject:

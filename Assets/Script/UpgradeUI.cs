@@ -7,19 +7,26 @@ using System;
 
 public class UpgradeUI : MonoBehaviour
 {
-	public class Upgrade_UI : MonoBehaviour
-	{
-		public Image Image;
-		public Text Text;
-		public Text TextCost;
-	}
+	public Image Image;
+	public Text Text;
+	public Text TextCost;
+    private Upgrade _upgrade;
 
-	public class Upgrade
+    public void Initialize(Upgrade upgrade)
 	{
-		public string Name;
-		public string Description;
-		public Sprite Sprite;
-		public int Cost;
-		public int DPS;
+		_upgrade = upgrade;
+		Image.sprite = upgrade.Sprite;
+		Text.text = upgrade.Name + System.Environment.NewLine + upgrade.Description;
+		TextCost.text = upgrade.Cost + "$";
 	}
+}
+
+[Serializable]
+public class Upgrade
+{
+	public string Name;
+	public string Description;
+	public Sprite Sprite;
+	public int Cost;
+	public int DPS;
 }

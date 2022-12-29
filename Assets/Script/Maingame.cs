@@ -8,13 +8,23 @@ using System;
 public class Maingame : MonoBehaviour
 {
 	public List<MonsterInfos> Monsters;
+	public List<Upgrade> Upgrades;
 	int _currentMonster;
 	public Monster Monster;
 	public GameObject PrefabHitPoint;
+	public GameObject PrefabHitUpgradeUI;
+	public GameObject ParentUpgrades;
 
     private void Start()
     {
 		Monster.SetMonster(Monsters[_currentMonster]);
+
+		foreach (var upgrade in Upgrades)
+        {
+			GameObject go = GameObject.Instantiate(PrefabHitUpgradeUI, ParentUpgrades.transform, false);
+			go.transform.localPosition = Vector3.zero;
+			go.GetComponent<UpgradeUI>().Initialize(upgrade);
+        }
     }
 
 	private void NextMonster()
@@ -22,6 +32,8 @@ public class Maingame : MonoBehaviour
 		_currentMonster++;
 		Monster.SetMonster(Monsters[_currentMonster]);
 	}
+
+	
 
 	void Update()
 	{

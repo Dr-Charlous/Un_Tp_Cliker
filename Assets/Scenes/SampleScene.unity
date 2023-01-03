@@ -742,7 +742,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2038235725}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.8909589
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1082,6 +1082,16 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
     Cost: 30
     DPS: 1
+  - Name: Roseline
+    Description: Ajoute 1 dps
+    Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
+    Cost: 30
+    DPS: 1
+  - Name: Roseline
+    Description: Ajoute 1 dps
+    Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
+    Cost: 30
+    DPS: 1
   Monster: {fileID: 1579687485}
   PrefabHitPoint: {fileID: 4633319694470132182, guid: 7d4d2fa797464ef4596c7c42f7b90fce, type: 3}
   PrefabHitUpgradeUI: {fileID: 2957881381390665492}
@@ -1299,7 +1309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.7859142}
+  m_AnchoredPosition: {x: 0, y: 0.00003157451}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &2057882693
@@ -1510,6 +1520,22 @@ PrefabInstance:
     - target: {fileID: 1081796600846389439, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
       propertyPath: m_Name
       value: UpgradeUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787138441059440060, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787138441059440060, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787138441059440060, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2957881381390665492}
+    - target: {fileID: 2787138441059440060, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5104973331803314702, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
       propertyPath: m_Pivot.x

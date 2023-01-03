@@ -19,6 +19,11 @@ public class UpgradeUI : MonoBehaviour
 		Text.text = upgrade.Name + System.Environment.NewLine + upgrade.Description;
 		TextCost.text = upgrade.Cost + "$";
 	}
+
+	public void OnClick()
+	{
+		MainGame.Instance.AddUpgrade(_upgrade);
+	}
 }
 
 [Serializable]

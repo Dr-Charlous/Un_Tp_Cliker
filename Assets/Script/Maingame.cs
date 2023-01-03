@@ -5,15 +5,31 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 
-public class Maingame : MonoBehaviour
+public class MainGame : MonoBehaviour
 {
+
+	public static MainGame Instance;
+
+	private void Awake()
+	{
+		Instance = this;
+	}
+
+
 	public List<MonsterInfos> Monsters;
 	public List<Upgrade> Upgrades;
+	public List<Upgrade> _unlockedUpgrades = new List<Upgrade>();
 	int _currentMonster;
 	public Monster Monster;
 	public GameObject PrefabHitPoint;
 	public GameObject PrefabHitUpgradeUI;
 	public GameObject ParentUpgrades;
+	private int _timerAutoDamage = 0;
+
+
+	
+
+
 
     private void Start()
     {
@@ -60,5 +76,38 @@ public class Maingame : MonoBehaviour
 				NextMonster();
             }
 		}
+
+		_timerAutoDamage += TimeoutException.deltaTime;
+
+		if (_timerAutoDamage >= 1.0f)
+        {
+			_timerAutoDamage = 0;
+			foreach (var upgrade in _unlockedUpgrades)
+            {
+				Monster.Hit(upgrade.DPS);
+            }
+        }
 	}
+
+
+	void Hit(int damage,Monster monster)
+    {
+		monster.Hit(damage);
+
+		GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
+		go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 100;
+		go.transform.DOLocalMoveY(150, 0.8f);
+		go.GetComponent<Text>().DOFade(0, 0.8f);
+		GameObject.Destroy(go, 0.8f);
+
+		if (monster.IsAlive() == false)
+        {
+			NextMonster();
+        }
+    }
+
+	public void AddUpgrade( Upgrade upgrade )
+    {
+		_unlockedUpgrades.Add(upgrade);
+    }
 }

@@ -742,7 +742,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2038235725}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99979
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -785,6 +785,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298042458}
   m_CullTransparentMesh: 1
+--- !u!1 &1442365005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4633319694470132182, guid: 7d4d2fa797464ef4596c7c42f7b90fce, type: 3}
+  m_PrefabInstance: {fileID: 2057882693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1556830328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,38 +1069,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monsters:
-  - Name: Tamer
+  - Name: tonper
     Life: 10
     Sprite: {fileID: 21300000, guid: d372562f61c1e5b46a4e57b752f9255b, type: 3}
-  - Name: Tonper
-    Life: 10
-    Sprite: {fileID: 21300000, guid: f029809e062ba224b8bd6d1c0ca34917, type: 3}
-  - Name: Taseur
-    Life: 10
-    Sprite: {fileID: 21300000, guid: 0009b5e19e0c3ab4a85dcd68ab0db9c1, type: 3}
-  - Name: Tonfrer
-    Life: 10
-    Sprite: {fileID: 21300000, guid: 1a9a92c8b3f6d0b45ab3f54403a41627, type: 3}
+  - Name: tonper2
+    Life: 200
+    Sprite: {fileID: 21300000, guid: d372562f61c1e5b46a4e57b752f9255b, type: 3}
   Upgrades:
-  - Name: Roseline
-    Description: Ajoute 1 dps
-    Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
+  - Name: tamer
+    Description: miam
+    Sprite: {fileID: 21300000, guid: 1abda9bb7c9cf4341a64bd0f97897aec, type: 3}
     Cost: 30
     DPS: 1
-  - Name: Roseline
-    Description: Ajoute 1 dps
-    Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
-    Cost: 30
-    DPS: 1
-  - Name: Roseline
-    Description: Ajoute 1 dps
-    Sprite: {fileID: 21300000, guid: f184799e2b2483b4bbede77be2e9c16d, type: 3}
-    Cost: 30
-    DPS: 1
+  _unlockedUpgrades: []
   Monster: {fileID: 1579687485}
-  PrefabHitPoint: {fileID: 4633319694470132182, guid: 7d4d2fa797464ef4596c7c42f7b90fce, type: 3}
+  PrefabHitPoint: {fileID: 1442365005}
   PrefabHitUpgradeUI: {fileID: 2957881381390665492}
-  ParentUpgrades: {fileID: 465581778}
+  ParentUpgrades: {fileID: 2053246828}
 --- !u!222 &1919071911
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1309,8 +1299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00003157451}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0, y: -0.000035098856}
+  m_SizeDelta: {x: 0, y: 1850}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &2057882693
 PrefabInstance:
@@ -1607,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5104973331803314702, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1296
+      value: 1287
       objectReference: {fileID: 0}
     - target: {fileID: 5104973331803314702, guid: a8a574b6748d8af41ac1d8ef9e33b3d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

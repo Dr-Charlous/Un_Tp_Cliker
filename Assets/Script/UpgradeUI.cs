@@ -22,7 +22,7 @@ public class UpgradeUI : MonoBehaviour
 
 	public void OnClick()
 	{
-		MainGame.Instance.AddUpgrade(_upgrade);
+		Maingame.Instance.AddUpgrade(_upgrade);
 	}
 }
 

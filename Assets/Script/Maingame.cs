@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 
-public class MainGame : MonoBehaviour
+public class Maingame : MonoBehaviour
 {
 
-	public static MainGame Instance;
+	public static Maingame Instance;
 
 	private void Awake()
 	{
@@ -24,7 +24,7 @@ public class MainGame : MonoBehaviour
 	public GameObject PrefabHitPoint;
 	public GameObject PrefabHitUpgradeUI;
 	public GameObject ParentUpgrades;
-	private int _timerAutoDamage = 0;
+	private float _timerAutoDamage = 0;
 
 
 	
@@ -77,7 +77,7 @@ public class MainGame : MonoBehaviour
             }
 		}
 
-		_timerAutoDamage += TimeoutException.deltaTime;
+		_timerAutoDamage += Time.deltaTime;
 
 		if (_timerAutoDamage >= 1.0f)
         {

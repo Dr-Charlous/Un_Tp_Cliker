@@ -10,17 +10,11 @@ public class Menu : MonoBehaviour
 
     public void OnClickPlay()
     {
-        WaitAndLog();
         SceneManager.LoadScene("MainGame");
     }
 
     public void OnClickQuit()
     {
         Application.Quit();
-    }
-
-    IEnumerator WaitAndLog()
-    {
-        yield return new WaitForSeconds(2);
     }
 }

@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
 		if (!audioSource.isPlaying)
 		{
 			audioSource.PlayOneShot(clips[_clip], volume);
+		} else
+        {
+			audioSource.Stop();
 		}
 	}
 }

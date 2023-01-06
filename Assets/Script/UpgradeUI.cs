@@ -23,12 +23,14 @@ public class UpgradeUI : MonoBehaviour
 
 	public void OnClick()
 	{
-		if (maingame._money >= _upgrade.Cost)
+		if ((maingame._money >= _upgrade.Cost) && _upgrade.number < 10)
 		{
-			maingame._money -= _upgrade.Cost;
+			maingame._money -= (int)_upgrade.Cost;
 			Maingame.Instance.AddUpgrade(_upgrade);
 			_upgrade.number += 1;
+			_upgrade.Cost += _upgrade.Cost / 4;
 			Text.text = _upgrade.Name + System.Environment.NewLine + _upgrade.Description + System.Environment.NewLine + "Number of this : " + _upgrade.number;
+			TextCost.text = (int)_upgrade.Cost + "$";
 		}
 	}
 }
@@ -40,6 +42,6 @@ public class Upgrade
 	public string Name;
 	public string Description;
 	public Sprite Sprite;
-	public int Cost;
+	public float Cost;
 	public int DPS;
 }

@@ -65,23 +65,27 @@ public class Maingame : MonoBehaviour
 			Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(world, Vector2.zero);
 
-			//if (hit.collider != null)
-			//{
-			//	Debug.Log(hit.collider.name);
-			//}
-
-			Monster monster = hit.collider.GetComponent<Monster>();
-			monster.Hit(ClickPower);
-			GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
-			go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 200;
-			go.transform.DOLocalMoveY(150, 0.8f);
-			go.GetComponent<Text>().DOFade(0, 0.8f);
-			GameObject.Destroy(go, 0.8f);
-
-			if ( monster.IsAlive() == false)
+            if (hit.collider != null)
             {
-				NextMonster();
-            }
+                //Debug.Log(hit.collider.name);
+
+				Monster monster = hit.collider.GetComponent<Monster>();
+				monster.Hit(ClickPower);
+				GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
+				go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 200;
+				go.transform.DOLocalMoveY(150, 0.8f);
+				go.GetComponent<Text>().DOFade(0, 0.8f);
+				GameObject.Destroy(go, 0.8f);
+
+				if (monster.IsAlive() == false)
+				{
+					NextMonster();
+				}
+			}
+
+            
+
+			
 		}
 
 		_timerAutoDamage += Time.deltaTime;

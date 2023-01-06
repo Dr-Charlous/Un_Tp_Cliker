@@ -21,9 +21,13 @@ public class Maingame : MonoBehaviour
 	public List<Upgrade> _unlockedUpgrades = new List<Upgrade>();
 	int _currentMonster;
 	public Monster Monster;
+	public int _money = 0;
+	public int ClickPower = 1;
+	public Text Score;
 	public GameObject PrefabHitPoint;
 	public GameObject PrefabHitUpgradeUI;
 	public GameObject ParentUpgrades;
+	public GameObject MenuPage;
 	private float _timerAutoDamage = 0;
 
 
@@ -40,10 +44,10 @@ public class Maingame : MonoBehaviour
 			GameObject go = GameObject.Instantiate(PrefabHitUpgradeUI, ParentUpgrades.transform, false);
 			go.transform.localPosition = Vector3.zero;
 			go.GetComponent<UpgradeUI>().Initialize(upgrade);
-        }
+		}
     }
 
-	private void NextMonster()
+	public void NextMonster()
 	{
 		_currentMonster++;
 		Monster.SetMonster(Monsters[_currentMonster]);
@@ -53,20 +57,21 @@ public class Maingame : MonoBehaviour
 
 	void Update()
 	{
+		Score.text = $" Your money : {_money} $";
 		if (Input.GetMouseButtonDown(0))
 		{
 			Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(world, Vector2.zero);
 
-			if (hit.collider != null)
-			{
-				Debug.Log(hit.collider.name);
-			}
+			//if (hit.collider != null)
+			//{
+			//	Debug.Log(hit.collider.name);
+			//}
 
 			Monster monster = hit.collider.GetComponent<Monster>();
-			monster.Hit(1);
+			monster.Hit(ClickPower);
 			GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
-			go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 100;
+			go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 200;
 			go.transform.DOLocalMoveY(150, 0.8f);
 			go.GetComponent<Text>().DOFade(0, 0.8f);
 			GameObject.Destroy(go, 0.8f);
@@ -109,5 +114,10 @@ public class Maingame : MonoBehaviour
 	public void AddUpgrade( Upgrade upgrade )
     {
 		_unlockedUpgrades.Add(upgrade);
+    }
+
+	public void MenuButton()
+    {
+		MenuPage.SetActive(!MenuPage.activeSelf);
     }
 }

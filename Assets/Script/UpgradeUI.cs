@@ -11,8 +11,9 @@ public class UpgradeUI : MonoBehaviour
 	public Text Text;
 	public Text TextCost;
     private Upgrade _upgrade;
+	public Maingame maingame;
 
-    public void Initialize(Upgrade upgrade)
+	public void Initialize(Upgrade upgrade)
 	{
 		_upgrade = upgrade;
 		Image.sprite = upgrade.Sprite;
@@ -22,7 +23,11 @@ public class UpgradeUI : MonoBehaviour
 
 	public void OnClick()
 	{
-		Maingame.Instance.AddUpgrade(_upgrade);
+		if (maingame._money >= _upgrade.Cost)
+		{
+			maingame._money -= _upgrade.Cost;
+			Maingame.Instance.AddUpgrade(_upgrade);
+		}
 	}
 }
 

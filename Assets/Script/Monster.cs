@@ -26,6 +26,7 @@ public class Monster : MonoBehaviour
     public Image ImageLife;
     public Sprite Sprite;
     public GameObject Visual;
+    public Maingame maingame;
     public Canvas Canvas;
 
     public void SetMonster(MonsterInfos infos )
@@ -35,24 +36,24 @@ public class Monster : MonoBehaviour
 
         Visual.GetComponent<SpriteRenderer>().sprite = infos.Sprite;
     }
-    public void UpdateLife()
+    void Update()
     {
         TextLife.text = $"{_life}/{_lifeMax}";
 
         float percent = (float)_life / (float)_lifeMax;
         ImageLife.fillAmount = percent;
-    }
 
-    public void Awake()
-    {
-        UpdateLife();
+        if (_life <= 0)
+        {
+            maingame.NextMonster();
+        }
     }
 
     public void Hit(int damage)
     {
+        maingame._money += maingame.ClickPower;
         _life -= damage;
-        UpdateLife();
         Visual.transform.DOComplete();
-        Visual.transform.DOPunchScale(new Vector3(0.1f, 0, 0), 0.3f);
+        Visual.transform.DOPunchScale(new Vector3(0.001f, 0, 0), 0.3f);
     }
 }

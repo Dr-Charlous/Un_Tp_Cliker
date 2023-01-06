@@ -28,6 +28,7 @@ public class Maingame : MonoBehaviour
 	public GameObject PrefabHitUpgradeUI;
 	public GameObject ParentUpgrades;
 	public GameObject MenuPage;
+	public GameObject ShopPage;
 	private float _timerAutoDamage = 0;
 
 
@@ -116,8 +117,13 @@ public class Maingame : MonoBehaviour
 		_unlockedUpgrades.Add(upgrade);
     }
 
-	public void MenuButton()
+	public void ShopButton()
     {
-		MenuPage.SetActive(!MenuPage.activeSelf);
+		ShopPage.SetActive(!ShopPage.activeSelf);
     }
+
+	public void MenuButton()
+	{
+		MenuPage.SetActive(!MenuPage.activeSelf);
+	}
 }

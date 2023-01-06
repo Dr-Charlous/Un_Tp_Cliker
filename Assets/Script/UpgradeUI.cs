@@ -17,7 +17,7 @@ public class UpgradeUI : MonoBehaviour
 	{
 		_upgrade = upgrade;
 		Image.sprite = upgrade.Sprite;
-		Text.text = upgrade.Name + System.Environment.NewLine + upgrade.Description;
+		Text.text = upgrade.Name + System.Environment.NewLine + upgrade.Description + System.Environment.NewLine + "Number of this : " + upgrade.number;
 		TextCost.text = upgrade.Cost + "$";
 	}
 
@@ -27,6 +27,8 @@ public class UpgradeUI : MonoBehaviour
 		{
 			maingame._money -= _upgrade.Cost;
 			Maingame.Instance.AddUpgrade(_upgrade);
+			_upgrade.number += 1;
+			Text.text = _upgrade.Name + System.Environment.NewLine + _upgrade.Description + System.Environment.NewLine + "Number of this : " + _upgrade.number;
 		}
 	}
 }
@@ -34,6 +36,7 @@ public class UpgradeUI : MonoBehaviour
 [Serializable]
 public class Upgrade
 {
+	public int number = 0;
 	public string Name;
 	public string Description;
 	public Sprite Sprite;

@@ -65,6 +65,7 @@ MonoBehaviour:
   Image: {fileID: 4005993713339783054}
   Text: {fileID: 3929434121447967542}
   TextCost: {fileID: 7260119350048822105}
+  maingame: {fileID: 0}
 --- !u!1 &2456313734245542092
 GameObject:
   m_ObjectHideFlags: 0

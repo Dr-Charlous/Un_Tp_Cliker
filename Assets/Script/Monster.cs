@@ -22,6 +22,7 @@ public class Monster : MonoBehaviour
 
     [SerializeField]int _life;
     [SerializeField]private int _lifeMax;
+    public Text TextName;
     public Text TextLife;
     public Image ImageLife;
     public Sprite Sprite;
@@ -33,6 +34,7 @@ public class Monster : MonoBehaviour
     {
         _lifeMax = infos.Life;
         _life = _lifeMax;
+        TextName.text = infos.Name;
 
         Visual.GetComponent<SpriteRenderer>().sprite = infos.Sprite;
     }

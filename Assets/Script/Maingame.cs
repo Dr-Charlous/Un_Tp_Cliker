@@ -50,7 +50,8 @@ public class Maingame : MonoBehaviour
 
 	public void NextMonster()
 	{
-		_currentMonster++;
+		System.Random random = new System.Random();
+		_currentMonster = UnityEngine.Random.Range(0, Monsters.Count);
 		Monster.SetMonster(Monsters[_currentMonster]);
 	}
 
@@ -120,10 +121,12 @@ public class Maingame : MonoBehaviour
 	public void ShopButton()
     {
 		ShopPage.SetActive(!ShopPage.activeSelf);
+		MenuPage.SetActive(false);
     }
 
 	public void MenuButton()
 	{
 		MenuPage.SetActive(!MenuPage.activeSelf);
+		ShopPage.SetActive(false);
 	}
 }

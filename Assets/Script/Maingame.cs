@@ -72,7 +72,7 @@ public class Maingame : MonoBehaviour
 				Monster monster = hit.collider.GetComponent<Monster>();
 				monster.Hit(ClickPower);
 				GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
-				go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 200;
+				go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 500;
 				go.transform.DOLocalMoveY(150, 0.8f);
 				go.GetComponent<Text>().DOFade(0, 0.8f);
 				GameObject.Destroy(go, 0.8f);
@@ -106,7 +106,7 @@ public class Maingame : MonoBehaviour
 		monster.Hit(damage);
 
 		GameObject go = GameObject.Instantiate(PrefabHitPoint, monster.Canvas.transform, false);
-		go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 100;
+		go.transform.localPosition = UnityEngine.Random.insideUnitCircle * 500;
 		go.transform.DOLocalMoveY(150, 0.8f);
 		go.GetComponent<Text>().DOFade(0, 0.8f);
 		GameObject.Destroy(go, 0.8f);
